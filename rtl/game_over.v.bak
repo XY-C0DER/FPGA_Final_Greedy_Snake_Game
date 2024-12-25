@@ -1,0 +1,18 @@
+
+
+module game_over(
+    input   wire            tft_clk_9m  ,   //输入时钟,频率9MHz
+    input   wire            sys_rst_n   ,   //系统复位,低电平有效
+
+    output  wire    [11:0]   pix_x       ,   //输出TFT有效显示区域像素点X轴坐标
+    output  wire    [11:0]   pix_y       ,   //输出TFT有效显示区域像素点Y轴坐标
+    output  wire    [15:0]   rgb_tft     ,   //TFT显示数据
+    output  wire             hsync       ,   //TFT行同步信号
+    output  wire             vsync         //TFT场同步信号
+
+   );
+
+
+
+endmodule
+

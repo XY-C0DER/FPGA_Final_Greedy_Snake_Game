@@ -1,0 +1,44 @@
+
+`timescale 1ns/1ps
+
+
+
+module tb();
+
+  wire    [15:0]  rgb_tft    ;   //输出像素信息
+  wire            hsync      ;   //输出行同步信号
+  wire            vsync      ;   //输出场同步信号
+  wire            tft_clk    ;   //输出TFT时钟信号
+  wire            tft_de     ;   //输出TFT使能信号
+  wire            tft_bl     ;    //输出背光信号
+  
+ wire            stcp  ;  //输出数据存储寄时钟
+ wire            shcp  ;  //移位寄存器的时钟输入
+ wire            ds    ;  //串行数据输入
+ wire            oe    ;  //输出使能信号
+
+YH_SNAKE_GAME YH_SNAKE_GAME(
+              .clk,//50MHZ
+              .reset_n,//sw0
+  
+              .key_up,//bnt0
+              .key_down,//bnt1
+              .key_left,//bnt2
+              .key_right,//bnt3
+  
+              .rgb_tft   (),   //输出像素信息
+              .hsync     (),   //输出行同步信号
+              .vsync     (),   //输出场同步信号
+              .tft_clk   (),   //输出TFT时钟信号
+              .tft_de    (),   //输出TFT使能信号
+              .tft_bl    (),    //输出背光信号
+  
+              .stcp      (),   //输出数据存储寄时钟
+              .shcp      (),   //移位寄存器的时钟输入
+              .ds        (),   //串行数据输入
+              .oe        ()      //输出使能信号
+        
+		  );
+		  
+
+endmodule 
